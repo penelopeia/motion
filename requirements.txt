@@ -1,0 +1,2 @@
+numpy @ file:///C:/ci/numpy_and_numpy_base_1626271903025/work
+opencv-python==4.5.3.56
