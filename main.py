@@ -19,7 +19,7 @@ while True: #cap.isOpened():
     # mask it on original
     #result = cv2.bitwise_and(frame, frame, mask=filter_frame)
 
-    grad = corner_gradient(frame)
+    grad = corner_gradient(frame, "blue")
 
     cv2.imshow('frame', grad)
     if cv2.waitKey(1) == ord('q'):
