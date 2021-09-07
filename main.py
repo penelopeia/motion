@@ -1,6 +1,7 @@
 import cv2
 
 from color import filter_green, filter_white
+from draw import corner_gradient
 
 cap = cv2.VideoCapture(0)
 
@@ -18,7 +19,9 @@ while True: #cap.isOpened():
     # mask it on original
     result = cv2.bitwise_and(frame, frame, mask=filter_frame)
 
-    cv2.imshow('frame', result)
+    grad = corner_gradient(frame)
+
+    cv2.imshow('frame', grad)
     if cv2.waitKey(1) == ord('q'):
         break
 
