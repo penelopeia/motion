@@ -35,26 +35,13 @@ def fill_gradient(image, color="grey"):
         c_ind = 0
 
     h, w = image.shape[:2]
-    # build the row
-    row = []
-    # start black
-    color = 0
-    # work on an image copy
     frame = np.copy(image)
 
-    print("height: {}, width: {}".format(h, w))
-
-    debug_count = 0
     for n in range(h):
-        debug_count += 1
-        color = 0
         for r in range(w):
-            color += 1
-            # set the color for BGR
+            mult = (r/w)*255
             bgr = [0,0,0]
-            bgr[c_ind] = color
+            bgr[c_ind] = mult
             frame[n, r] = (bgr[0], bgr[1], bgr[2])
-
-    print("debug cnt: {}, color: {}".format(debug_count, color))
 
     return frame
