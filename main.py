@@ -1,9 +1,9 @@
 import cv2
 
 from color import filter_green, filter_white
-from draw import corner_gradient, fill_gradient, rainbow_gradient
+from draw import corner_gradient, fill_gradient, checkerboard_gradient
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 while True: #cap.isOpened():
 
@@ -19,7 +19,7 @@ while True: #cap.isOpened():
     # mask it on original
     #result = cv2.bitwise_and(frame, frame, mask=filter_frame)
 
-    grad = rainbow_gradient(frame)
+    grad = checkerboard_gradient(frame)
 
     cv2.imshow('frame', grad)
     if cv2.waitKey(1) == ord('q'):
